@@ -39,7 +39,8 @@
 /** The `TKCalendarMonthViewController` class creates a controller object that manages a calendar month grid. */ 
 @interface TKCalendarMonthViewController : UIViewController <TKCalendarMonthViewDelegate,TKCalendarMonthViewDataSource> 
 
-/** Initializes a month view controller to manage a month grid. Sunday will be the left-most day.
+/** Initializes a month view controller to manage a month grid. Sunday will be the left-most day
+ if current locale's weeks begin on Sunday, otherwise Monday.
  @return A newly create month view controller.
  */
 - (id) init;
@@ -57,7 +58,8 @@
  */
 - (id) initWithSunday:(BOOL)sundayFirst timeZone:(NSTimeZone*)timeZone;
 
-/** Initializes a month view controller to manage a month grid. Sunday will be the left-most day.
+/** Initializes a month view controller to manage a month grid. Sunday will be the left-most day
+ if current locale's weeks begin on Sunday, otherwise Monday.
  @param timeZone The time zone for the calendar grid.
  @return A newly create month view controller.
  */

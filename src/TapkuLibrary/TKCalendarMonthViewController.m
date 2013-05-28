@@ -40,7 +40,7 @@
 @implementation TKCalendarMonthViewController
 
 - (id) init{
-	self = [self initWithSunday:YES];
+	self = [self initWithSunday:[[NSCalendar currentCalendar]firstWeekday] == 1];
 	return self;
 }
 - (id) initWithSunday:(BOOL)sundayFirst{
@@ -48,7 +48,7 @@
 	return self;
 }
 - (id) initWithTimeZone:(NSTimeZone *)timeZone{
-	self = [self initWithSunday:YES timeZone:self.timeZone];
+	self = [self initWithSunday:[[NSCalendar currentCalendar]firstWeekday] == 1 timeZone:self.timeZone];
 	return self;
 }
 - (id) initWithSunday:(BOOL)sundayFirst timeZone:(NSTimeZone *)timeZone{
@@ -60,7 +60,7 @@
 - (id) initWithCoder:(NSCoder *)decoder {
     if(!(self=[super initWithCoder:decoder])) return nil;
 	self.timeZone = [NSTimeZone defaultTimeZone];
-	self.sundayFirst = YES;
+	self.sundayFirst = [[NSCalendar currentCalendar]firstWeekday] == 1;
     return self;
 }
 

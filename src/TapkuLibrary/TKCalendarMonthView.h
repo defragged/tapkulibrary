@@ -41,6 +41,14 @@
 @interface TKCalendarMonthView : UIView
 
 /** Initialize a Calendar Month Grid.
+ 
+ Uses locale's setting for first day of week.
+ @param timeZone The time zone of the grid,
+ @return A `TKCalendarMonthView` object or nil.
+ */
+- (id) init;
+
+/** Initialize a Calendar Month Grid.
  @param timeZone The time zone of the grid,
  @return A `TKCalendarMonthView` object or nil.
  */

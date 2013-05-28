@@ -738,8 +738,7 @@ static UIImage *tileImage;
 	return self;
 }
 - (id) init{
-	self = [self initWithSundayAsFirst:YES];
-	return self;
+    return [self initWithSundayAsFirst:[[NSCalendar currentCalendar] firstWeekday] == 1];
 }
 - (id) initWithFrame:(CGRect)frame{
 	self = [self init];
