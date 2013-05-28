@@ -48,7 +48,7 @@
 	return self;
 }
 - (id) initWithTimeZone:(NSTimeZone *)timeZone{
-	self = [self initWithSunday:[[NSCalendar currentCalendar]firstWeekday] == 1 timeZone:self.timeZone];
+	self = [self initWithSunday:[[NSCalendar currentCalendar]firstWeekday] == 1 timeZone:timeZone];
 	return self;
 }
 - (id) initWithSunday:(BOOL)sundayFirst timeZone:(NSTimeZone *)timeZone{
