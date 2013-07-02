@@ -40,6 +40,7 @@
 	_textView = [[TKTextView alloc] initWithFrame:CGRectZero];
 	_textView.font = [UIFont boldSystemFontOfSize:14.0];
 	_textView.backgroundColor = [UIColor clearColor];
+	_textView.editable = NO;
 	[self.contentView addSubview:_textView];
 	
 	return self;
@@ -54,6 +55,10 @@
 	_textView.frame = CGRectInset(self.contentView.bounds, 4, 4);
 }
 
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated{
+	[super setEditing:editing animated:animated];
+	self.textView.editable = editing;
+}
 
 - (void) _colorText:(BOOL)active{
 	_textView.textColor = active ? [UIColor whiteColor] : [UIColor blackColor];
